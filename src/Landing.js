@@ -5,11 +5,11 @@ import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import logo from './logo.svg';
 
 const navigation = [
-  { name: 'Testimonials', href: '#' },
-
+  { name: 'About Me', href: 'about-me' },
+  { name: 'Testimonials', href: 'testimonials' },
 ]
 
-export default function Example() {
+export default function Landing() {
   return (
     <div className="relative bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
@@ -26,17 +26,17 @@ export default function Example() {
 
           <Popover>
             <div className="relative pt-6 px-4 sm:px-6 lg:px-8">
-              <nav className="relative flex items-center justify-between sm:h-10 lg:justify-start" aria-label="Global">
+              <div className="relative flex items-center justify-between sm:h-10 lg:justify-start" aria-label="Global">
                 <div className="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
                   <div className="flex items-center justify-between w-full md:w-auto">
-                    <a href="#">
+                    <div href="#">
                       <span className="sr-only">Workflow</span>
                       <img
                         alt="PGR8"
                         className="h-14 w-auto sm:h-14"
                         src={logo}
                       />
-                    </a>
+                    </div>
                     <div className="-mr-2 flex items-center md:hidden">
                       <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
                         <span className="sr-only">Open main menu</span>
@@ -45,17 +45,15 @@ export default function Example() {
                     </div>
                   </div>
                 </div>
-                <div className="hidden md:block md:ml-10 md:pr-4 md:space-x-8">
                   {navigation.map((item) => (
-                    <a key={item.name} href={item.href} className="font-medium text-gray-500 hover:text-gray-900">
+                    <div href={item.href} onClick={() => document.getElementById(item.href).scrollIntoView({behavior: 'smooth'})} className="hidden font-medium text-gray-500 hover:text-gray-900 pr-5 md:block">
                       {item.name}
-                    </a>
+                    </div>
                   ))}
-                  <a href="#" className="font-medium text-blue-600 hover:text-yellow-500">
+                  <div href="#" className="hidden md:contents font-medium text-blue-600 hover:text-yellow-500">
                     Contact
-                  </a>
-                </div>
-              </nav>
+                  </div>
+              </div>
             </div>
 
             <Transition
@@ -76,7 +74,7 @@ export default function Example() {
                     <div>
                       <img
                         className="h-8 w-auto"
-                        src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+                        src={logo}
                         alt=""
                       />
                     </div>
@@ -89,13 +87,14 @@ export default function Example() {
                   </div>
                   <div className="px-2 pt-2 pb-3 space-y-1">
                     {navigation.map((item) => (
-                      <a
+                      <div
                         key={item.name}
                         href={item.href}
+                        onClick={() => document.getElementById(item.href).scrollIntoView({behavior: 'smooth'})}
                         className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
                       >
                         {item.name}
-                      </a>
+                      </div>
                     ))}
                   </div>
                   <a

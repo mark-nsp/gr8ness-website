@@ -1,3 +1,7 @@
+import { Fragment, useRef, useState } from 'react'
+import { Dialog, Transition } from '@headlessui/react'
+import { ExclamationIcon } from '@heroicons/react/outline'
+
 /*
   This example requires Tailwind CSS v2.0+ 
   
@@ -14,7 +18,7 @@
   }
   ```
 */
-const products = [
+const testimonials = [
     {
       id: 1,
       name: 'John Smith',
@@ -47,31 +51,105 @@ const products = [
       imageSrc: 'data:image/jpeg;base64,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',
       imageAlt: 'Hand holding black machined steel mechanical pencil with brass tip and top.',
     },
-    // More products...
   ]
   
-  export default function Example() {
+  export default function Testimonials() {
+    const [open, setOpen] = useState(false)
+
+    const cancelButtonRef = useRef(null)
+
     return (
-      <div className="bg-white">
+      <div id='testimonials' className="bg-white">
         <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
-          <h2 className="sr-only">Products</h2>
-  
+          <h2 className="sr-only">Testimonials</h2>
+          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-blue-600 sm:text-4xl ">
+            Testimonials
+          </p>
           <div className="grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
-            {products.map((product) => (
-              <a key={product.id} href={product.href} className="group">
+            {testimonials.map((testimonial) => (
+              <div key={testimonial.id} href={testimonial.href} onClick={() => setOpen(true)} className="group">
                 <div className="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
                   <img
-                    src={product.imageSrc}
-                    alt={product.imageAlt}
+                    src={testimonial.imageSrc}
+                    alt={testimonial.imageAlt}
                     className="w-full h-full object-center object-cover group-hover:opacity-75"
                   />
                 </div>
-                <h3 className="mt-4 text-sm text-gray-700">{product.name}</h3>
-                <p className="mt-1 text-lg font-medium text-gray-900">{product.price}</p>
-              </a>
+                <h3 className="mt-4 text-sm text-gray-700">{testimonial.name}</h3>
+                <p className="mt-1 text-lg font-medium text-gray-900">{testimonial.price}</p>
+              </div>
             ))}
           </div>
         </div>
+
+
+        <Transition.Root show={open} as={Fragment}>
+          <Dialog as="div" className="relative z-10" initialFocus={cancelButtonRef} onClose={setOpen}>
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
+            </Transition.Child>
+
+            <div className="fixed z-10 inset-0 overflow-y-auto">
+              <div className="flex items-end sm:items-center justify-center min-h-full p-4 text-center sm:p-0">
+                <Transition.Child
+                  as={Fragment}
+                  enter="ease-out duration-300"
+                  enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                  enterTo="opacity-100 translate-y-0 sm:scale-100"
+                  leave="ease-in duration-200"
+                  leaveFrom="opacity-100 translate-y-0 sm:scale-100"
+                  leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                >
+                  <Dialog.Panel className="relative bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-lg sm:w-full">
+                    <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                      <div className="sm:flex sm:items-start">
+                        <div className="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
+                          <ExclamationIcon className="h-6 w-6 text-red-600" aria-hidden="true" />
+                        </div>
+                        <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                          <Dialog.Title as="h3" className="text-lg leading-6 font-medium text-gray-900">
+                            Deactivate account
+                          </Dialog.Title>
+                          <div className="mt-2">
+                            <p className="text-sm text-gray-500">
+                              Are you sure you want to deactivate your account? All of your data will be permanently
+                              removed. This action cannot be undone.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                      <button
+                        type="button"
+                        className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm"
+                        onClick={() => setOpen(false)}
+                      >
+                        Deactivate
+                      </button>
+                      <button
+                        type="button"
+                        className="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
+                        onClick={() => setOpen(false)}
+                        ref={cancelButtonRef}
+                      >
+                        Cancel
+                      </button>
+                    </div>
+                  </Dialog.Panel>
+                </Transition.Child>
+              </div>
+            </div>
+          </Dialog>
+        </Transition.Root>
       </div>
     )
   }
