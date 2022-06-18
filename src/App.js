@@ -3,7 +3,7 @@ import './App.css';
 import Landing from './Landing';
 import Testimonials from './Testimonials';
 import AboutMe from './AboutMe';
-import { BrowserRouter, Route, Routes} from 'react-router-dom';
+import Contact from './Contact';
 
 function App() {
   return (
@@ -11,6 +11,7 @@ function App() {
       <Landing />
       <AboutMe />
       <Testimonials />
+      <Contact />
    </>
   );
 }

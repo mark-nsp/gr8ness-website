@@ -50,7 +50,7 @@ export default function Landing() {
                       {item.name}
                     </div>
                   ))}
-                  <div href="#" className="hidden md:contents font-medium text-blue-600 hover:text-yellow-500">
+                  <div href="contact" onClick={() => document.getElementById('contact').scrollIntoView({behavior: 'smooth'})} className="hidden md:contents font-medium text-blue-600 hover:text-yellow-500">
                     Contact
                   </div>
               </div>
