@@ -3,6 +3,7 @@ import { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import logo from './logo.svg';
+import collage from './assets/collage.jpg';
 
 const navigation = [
   { name: 'About Me', href: 'about-me' },
@@ -97,12 +98,12 @@ export default function Landing() {
                       </div>
                     ))}
                   </div>
-                  <a
-                    href="#"
+                  <div
+                    href="contact" onClick={() => document.getElementById('contact').scrollIntoView({behavior: 'smooth'})}
                     className="block w-full px-5 py-3 text-center font-medium text-blue-600 bg-gray-50 hover:bg-gray-100"
                   >
                     Contact
-                  </a>
+                  </div>
                 </div>
               </Popover.Panel>
             </Transition>
@@ -120,20 +121,20 @@ export default function Landing() {
               </p>
               <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                 <div className="rounded-md shadow">
-                  <a
-                    href="#"
+                  <div
+                    href="contact" onClick={() => document.getElementById('contact').scrollIntoView({behavior: 'smooth'})}
                     className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-gray-500 md:py-4 md:text-lg md:px-10"
                   >
                     Get in touch
-                  </a>
+                  </div>
                 </div>
                 <div className="mt-3 sm:mt-0 sm:ml-3">
-                  <a
-                    href="#"
+                  <div
+                    href='testimonials' onClick={() => document.getElementById('testimonials').scrollIntoView({behavior: 'smooth'})}
                     className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-blue-700 bg-yellow-300 hover:bg-gray-200 md:py-4 md:text-lg md:px-10"
                   >
                     Testimonials
-                  </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -143,7 +144,7 @@ export default function Landing() {
       <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
         <img
           className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
-          src="https://cubuffclub.com/images/2018/8/5/Athlete_Collage28.jpg"
+          src={collage}
           alt=""
         />
       </div>

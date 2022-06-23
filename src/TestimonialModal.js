@@ -5,11 +5,11 @@ import { XIcon } from '@heroicons/react/outline';
 
 export default function TestimonialModal( { open, setOpen, testimonial } ) {
 
-  const cancelButtonRef = useRef(null)
+  
 
   return (
     <Transition.Root show={open} as={Fragment}>
-      <Dialog as="div" className="relative z-10" initialFocus={cancelButtonRef} onClose={setOpen}>
+      <Dialog as="div" className="relative z-10" onClose={setOpen}>
         <Transition.Child
           as={Fragment}
           enter="ease-out duration-300"
@@ -34,29 +34,35 @@ export default function TestimonialModal( { open, setOpen, testimonial } ) {
               leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             >
               <Dialog.Panel className="relative bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-lg sm:w-full">
-              {/* <div className="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-                  <div
-                    className="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
-                    onClick={() => setOpen(false)}
-                    // ref={cancelButtonRef}
-                  >
-                    Cancel
-                  </div>
-                </div> */}
                 <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                  <div className='bg-white rounded-md p-2 inline-flex items-end justify-end text-gray-400 hover:text-gray-500'>
+                  <button
+                    type="button"
+                    className="absolute top-4 right-4 text-gray-400 hover:text-gray-500 sm:top-8 sm:right-6 md:top-6 md:right-6 lg:top-8 lg:right-8"
+                    onClick={() => setOpen(false)}
+                  >
+                    <span className="sr-only">Close</span>
+                    <XIcon className="h-6 w-6" aria-hidden="true" />
+                  </button>
+                  </div>
                   <div className="sm:flex sm:items-start">
-                    <div className="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 sm:mx-0 sm:h-40 sm:w-40">
-                      <img src={testimonial.imageSrc} />
+                     <div className="mx-auto flex-shrink-0 flex items-start justify-start h-12 w-12 sm:mx-0 h-40 w-40">
+                      <img src={testimonial.imageSrc} className='overflow-hidden'/>
                     </div>
                     <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
                       <Dialog.Title as="h3" className="text-lg leading-6 font-medium text-gray-900">
                         {testimonial.name}
                       </Dialog.Title>
-                      <div className="mt-2">
+                      <div className="mt-0.5">
                         <p className="text-sm text-gray-500">
                           {testimonial.sport}
                         </p>
                       </div>
+                      <Dialog.Description as='p' className='font-medium text-gray-700'>
+                      Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in
+                      accusamus quisquam.
+                      </Dialog.Description>
+
                     </div>
                   </div>
                 </div>
