@@ -1,5 +1,5 @@
 /* This example requires Tailwind CSS v2.0+ */
-import { Fragment, useRef, useState } from 'react'
+import { Fragment } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { XIcon } from '@heroicons/react/outline';
 
@@ -46,9 +46,9 @@ export default function TestimonialModal( { open, setOpen, testimonial } ) {
                   </button>
                   </div>
                   <div className="sm:flex sm:items-start">
-                     <div className="mx-auto flex-shrink-0 flex items-start justify-start h-12 w-12 sm:mx-0 h-40 w-40">
-                      <img src={testimonial.imageSrc} className='overflow-hidden'/>
-                    </div>
+                     {/* <div className="mx-auto flex-shrink-0 flex items-start justify-start h-24 w-24 sm:mx-0">
+                      <img src={testimonial.imageSrc} alt='athlete' className='overflow-hidden'/>
+                    </div> */}
                     <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
                       <Dialog.Title as="h3" className="text-lg leading-6 font-medium text-gray-900">
                         {testimonial.name}

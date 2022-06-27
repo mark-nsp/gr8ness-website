@@ -1,0 +1,22 @@
+userName: berniesander_wJuZCi
+accessKey: qsfQCwNNQebCijWcW5Yn
+platforms:
+  - os: Windows
+    os_version: 10
+    browser: chrome
+    browser_version: latest
+  - browserName: ios
+    realMobile: true
+    device: iPhone XS
+    os_version: 15
+  - os: OS X
+    os_version: Big Sur
+    browser: chrome
+    browser_version: 103.0
+parallelsPerPlatform: 1
+browserstackLocal: false
+buildName: browserstack-build-1
+projectName: BrowserStack Sample
+debug: false
+networkLogs: false
+consoleLogs: errors

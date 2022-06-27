@@ -10,7 +10,7 @@ const navigation = [
   { name: 'Testimonials', href: 'testimonials' },
 ]
 
-export default function Landing() {
+export default function Landing( {testFunc} ) {
   return (
     <div className="relative bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
@@ -47,11 +47,16 @@ export default function Landing() {
                   </div>
                 </div>
                   {navigation.map((item) => (
-                    <div href={item.href} onClick={() => document.getElementById(item.href).scrollIntoView({behavior: 'smooth'})} className="hidden font-medium text-gray-500 hover:text-gray-900 pr-5 md:block">
+                    <div 
+                        href={item.href} 
+                        onClick={() => testFunc ? testFunc() : document.getElementById(item.href).scrollIntoView({behavior: 'smooth'})} 
+                        className="hidden font-medium text-gray-500 hover:text-gray-900 pr-5 md:block"
+                        aria-label={item.name + 'Full'}
+                        >
                       {item.name}
                     </div>
                   ))}
-                  <div href="contact" onClick={() => document.getElementById('contact').scrollIntoView({behavior: 'smooth'})} className="hidden md:contents font-medium text-blue-600 hover:text-yellow-500">
+                  <div data-testid='contact' href="contact" onClick={() => testFunc ? testFunc() : document.getElementById('contact').scrollIntoView({behavior: 'smooth'})} className="hidden md:contents font-medium text-blue-600 hover:text-yellow-500">
                     Contact
                   </div>
               </div>
@@ -91,7 +96,8 @@ export default function Landing() {
                       <div
                         key={item.name}
                         href={item.href}
-                        onClick={() => document.getElementById(item.href).scrollIntoView({behavior: 'smooth'})}
+                        aria-label={item.name + "Small"}
+                        onClick={() => testFunc ? testFunc() : document.getElementById(item.href).scrollIntoView({behavior: 'smooth'})}
                         className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
                       >
                         {item.name}
@@ -99,7 +105,7 @@ export default function Landing() {
                     ))}
                   </div>
                   <div
-                    href="contact" onClick={() => document.getElementById('contact').scrollIntoView({behavior: 'smooth'})}
+                    href="contact" onClick={() => testFunc ? testFunc() : document.getElementById('contact').scrollIntoView({behavior: 'smooth'})}
                     className="block w-full px-5 py-3 text-center font-medium text-blue-600 bg-gray-50 hover:bg-gray-100"
                   >
                     Contact
@@ -122,16 +128,17 @@ export default function Landing() {
               <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                 <div className="rounded-md shadow">
                   <div
-                    href="contact" onClick={() => document.getElementById('contact').scrollIntoView({behavior: 'smooth'})}
-                    className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-gray-500 md:py-4 md:text-lg md:px-10"
+                    href="contact" onClick={() => testFunc ? testFunc() : document.getElementById('contact').scrollIntoView({behavior: 'smooth'})}
+                    className="w-full flex items-/center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-gray-500 md:py-4 md:text-lg md:px-10"
                   >
                     Get in touch
                   </div>
                 </div>
                 <div className="mt-3 sm:mt-0 sm:ml-3">
                   <div
-                    href='testimonials' onClick={() => document.getElementById('testimonials').scrollIntoView({behavior: 'smooth'})}
+                    href='testimonials' onClick={() => testFunc ? testFunc() : document.getElementById('testimonials').scrollIntoView({behavior: 'smooth'})}
                     className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-blue-700 bg-yellow-300 hover:bg-gray-200 md:py-4 md:text-lg md:px-10"
+                    aria-label='testimonialsButton'
                   >
                     Testimonials
                   </div>

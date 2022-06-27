@@ -88,6 +88,7 @@ const testimonials = [
                   <img
                     src={testimonial.imageSrc}
                     alt={testimonial.imageAlt}
+                    aria-label={testimonial.name}
                     className="w-full h-full object-center object-cover group-hover:opacity-75"
                   />
                 </div>
