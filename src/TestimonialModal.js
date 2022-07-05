@@ -55,12 +55,11 @@ export default function TestimonialModal( { open, setOpen, testimonial } ) {
                       </Dialog.Title>
                       <div className="mt-0.5">
                         <p className="text-sm text-gray-500">
-                          {testimonial.sport}
+                          {testimonial.college} | {testimonial.sport}
                         </p>
                       </div>
-                      <Dialog.Description as='p' className='font-medium text-gray-700'>
-                      Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in
-                      accusamus quisquam.
+                      <Dialog.Description as='p' className='font-medium text-gray-700 overflow-auto max-h-96'>
+                     {testimonial.content}
                       </Dialog.Description>
 
                     </div>

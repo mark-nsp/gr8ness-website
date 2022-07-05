@@ -4,9 +4,12 @@ import { Popover, Transition } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import logo from './logo.svg';
 import collage from './assets/collage.jpg';
+import collage1 from './assets/collage1.jpg';
+import collage2 from './assets/collage2.jpg';
+
 
 const navigation = [
-  { name: 'About Me', href: 'about-me' },
+  { name: 'Methodology', href: 'methodology' },
   { name: 'Testimonials', href: 'testimonials' },
 ]
 
@@ -50,13 +53,13 @@ export default function Landing( {testFunc} ) {
                     <div 
                         href={item.href} 
                         onClick={() => testFunc ? testFunc() : document.getElementById(item.href).scrollIntoView({behavior: 'smooth'})} 
-                        className="hidden font-medium text-gray-500 hover:text-gray-900 pr-5 md:block"
+                        className="hidden font-medium text-gray-500 hover:text-gray-900 pr-5 md:block hover:cursor-pointer"
                         aria-label={item.name + 'Full'}
                         >
                       {item.name}
                     </div>
                   ))}
-                  <div data-testid='contact' href="contact" onClick={() => testFunc ? testFunc() : document.getElementById('contact').scrollIntoView({behavior: 'smooth'})} className="hidden md:contents font-medium text-blue-600 hover:text-yellow-500">
+                  <div data-testid='contact' href="contact" onClick={() => testFunc ? testFunc() : document.getElementById('contact').scrollIntoView({behavior: 'smooth'})} className="hidden md:contents font-medium text-blue-600 hover:text-yellow-500 hover:cursor-pointer">
                     Contact
                   </div>
               </div>
@@ -98,7 +101,7 @@ export default function Landing( {testFunc} ) {
                         href={item.href}
                         aria-label={item.name + "Small"}
                         onClick={() => testFunc ? testFunc() : document.getElementById(item.href).scrollIntoView({behavior: 'smooth'})}
-                        className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+                        className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 hover:cursor-pointer"
                       >
                         {item.name}
                       </div>
@@ -106,7 +109,7 @@ export default function Landing( {testFunc} ) {
                   </div>
                   <div
                     href="contact" onClick={() => testFunc ? testFunc() : document.getElementById('contact').scrollIntoView({behavior: 'smooth'})}
-                    className="block w-full px-5 py-3 text-center font-medium text-blue-600 bg-gray-50 hover:bg-gray-100"
+                    className="block w-full px-5 py-3 text-center font-medium text-blue-600 bg-gray-50 hover:bg-gray-100 hover:cusor-pointer"
                   >
                     Contact
                   </div>
@@ -117,19 +120,23 @@ export default function Landing( {testFunc} ) {
 
           <main className="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
             <div className="sm:text-center lg:text-left">
-              <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-                <span className="block xl:inline">Let me help you</span>{' '}
-                <span className="block text-blue-600 xl:inline">Pursue Gr8ness</span>
+              <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-5xl">
+                <span className="block inline">Helping Aspiring Athletes</span>
+                <br />
+                <span className="block text-blue-600 inline">Unlock Their Greatness</span>
               </h1>
               <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
-                fugiat veniam occaecat fugiat aliqua.
+              Training their <b>Body & Mind</b> while connecting to their <b>Heart</b> <br />
+              Tapping into their <b>Limitless Potential</b> <br /> 
+              {/* Empowering them to bring <b>Their Best</b> when it <b>Matters Most</b> <br />
+              <b>On & Off</b> the playing field */}
+
               </p>
               <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                 <div className="rounded-md shadow">
                   <div
                     href="contact" onClick={() => testFunc ? testFunc() : document.getElementById('contact').scrollIntoView({behavior: 'smooth'})}
-                    className="w-full flex items-/center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-gray-500 md:py-4 md:text-lg md:px-10"
+                    className="w-full flex items-/center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-gray-500 md:py-4 md:text-lg md:px-10 hover:cursor-pointer"
                   >
                     Get in touch
                   </div>
@@ -137,7 +144,7 @@ export default function Landing( {testFunc} ) {
                 <div className="mt-3 sm:mt-0 sm:ml-3">
                   <div
                     href='testimonials' onClick={() => testFunc ? testFunc() : document.getElementById('testimonials').scrollIntoView({behavior: 'smooth'})}
-                    className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-blue-700 bg-yellow-300 hover:bg-gray-200 md:py-4 md:text-lg md:px-10"
+                    className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-blue-700 bg-yellow-300 hover:bg-gray-200 md:py-4 md:text-lg md:px-10 hover:cursor-pointer"
                     aria-label='testimonialsButton'
                   >
                     Testimonials
@@ -150,10 +157,11 @@ export default function Landing( {testFunc} ) {
       </div>
       <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
         <img
-          className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
+          className="h-56 w-full object-cover overflow-auto sm:h-72 md:h-96 lg:w-full lg:h-full"
           src={collage}
           alt=""
         />
+
       </div>
     </div>
   )
