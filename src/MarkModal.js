@@ -67,20 +67,23 @@ export default function MarkModal( { open, setOpen } ) {
                         Certifications
                       </Dialog.Title>
                       <hr />
-                      <Dialog.Description as='p' className='font-medium text-gray-700 overflow-auto max-h-96'>
-                                {/* <p className="text-sm text-gray-500">
-                                Mark holds a BS in Youth Ministry, an MA in Entreprenurial Leadership, as well as many different certifications. Here are a few:
-                                </p> */}
-                                <ul className='list-disc'>
-                                    <li>BS - Youth Ministry</li>
-                                    <li>MA - Entreprenurial Leadership</li>
-                                    <li>EXOS - Performance Specialist </li>
-                                    <li>National Academy of Sports Medicine - Performance Specialist & Corrective Exercise Specialist</li>
-                                    <li>National Sports Performance Association - Speed and Agility Coach</li>
+                      <Dialog.Description as='p' className='font-medium text-gray-700 max-h-96'>
+                                <ul className='list-none'>
+                                    <li><b>BS</b> - Youth Ministry</li>
+                                    <br />
+                                    <li><b>MA</b> - Entreprenurial Leadership</li>
+                                    <br />
+                                    <li><b>EXOS</b> - Performance Specialist</li>
+                                    <br />
+                                    <li><b>National Academy of Sports Medicine</b> - Performance Specialist & Corrective Exercise Specialist</li>
+                                    <br />
+                                    <li><b>National Sports Performance Association</b> - Speed and Agility Coach</li>
+                                    <br />
                                     <li>Positive Performance Certified Mindset Coach & Performance Visualization Specialist</li>
+                                    <br />
                                     <li>CPR/AED and First Aid Certified</li>
-                                </ul>  
-                                
+                                    <br />
+                                    </ul>
                       </Dialog.Description>
                     </div>
                   </div>
