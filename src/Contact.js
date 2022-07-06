@@ -127,7 +127,7 @@ const Contact = ({ testFunc }) => {
                                     placeholder="Leave me a note!">
                                 </textarea>
                             </div>
-                            <Reaptcha sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"  onVerify={verify} className='my-2'/>
+                            <Reaptcha sitekey="6Lc9q7sgAAAAAPke58fdNN4BpYPIlAVNBb1TvUOX"  onVerify={verify} className='my-2'/>
                             <input 
                             type="submit"
                             value="Send"
