@@ -131,7 +131,7 @@ const Contact = ({ testFunc }) => {
                             <input 
                             type="submit"
                             value="Send"
-                            disabled={!verified && !(document.forms['contact'] ? document.forms['contact']['name'].value : false) && !(document.forms['contact'] ? document.forms['contact']['email'].value : false)}
+                            disabled={!verified || !(document.forms['contact'] ? document.forms['contact']['name'].value : false) || !(document.forms['contact'] ? document.forms['contact']['email'].value : false)}
                             className="group mb-2 relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 hover:cursor-pointer disabled:bg-gray-300 disabled:cursor-auto"
                             />
                         </form>
