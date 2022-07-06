@@ -1,15 +1,11 @@
-import { Fragment, useRef, useState } from 'react'
-import { Dialog, Transition } from '@headlessui/react'
-import { ExclamationIcon } from '@heroicons/react/outline'
+import React, { useState } from 'react'
 import TestimonialModal from './TestimonialModal';
 import morrette from './assets/morrette.jpeg';
-import nick from './assets/nick.JPG';
-import john from './assets/john.jpg';
-import basse from './assets/basse.jpg';
+import nick from './assets/nick.jpg';
+
 import cam from './assets/cam.JPG';
-import tanner from './assets/tanner.jpg';
+import tanner from './assets/tanner.JPG';
 import jess from './assets/jess.jpeg';
-import bernie from './assets/bernie.jpg';
 import ben from './assets/ben.jpeg'
 import jake from './assets/jake.JPG'
 

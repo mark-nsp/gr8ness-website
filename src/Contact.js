@@ -39,6 +39,7 @@ const Contact = ({ testFunc }) => {
                         className="w-full h-full object-center object-cover hover:opacity-75 hover:cursor-pointer" 
                         src={Mark}
                         onClick={() => setMarkOpen(true)}
+                        alt='Mark Medhurst'
                         />
                 </div>
                 <div className='md:hidden' >
@@ -52,7 +53,7 @@ const Contact = ({ testFunc }) => {
                 <a href='https://www.linkedin.com/in/mark-medhurst-87a281a1/'>
                     <BsLinkedin className='mr-2 hover:cursor-pointer'/> 
                 </a>
-                <a>
+                <a href='https://www.facebook.com/mark.medhurst.144'>
                     <BsFacebook className='mr-2 hover:cursor-pointer'/>
                 </a>
                 <a href='https://www.instagram.com/thegr8nessproject/'>
@@ -69,7 +70,7 @@ const Contact = ({ testFunc }) => {
                             Reach out and we can set up a time to talk about how I can best partner with you and your aspiring althete!
                         </p>
                         <hr className='my-1'/>
-                        <form ref={form} onSubmit={sendEmail}  role='form'>
+                        <form ref={form} onSubmit={sendEmail}>
                             <label for='name' className="block text-sm font-medium text-gray-700">
                             Name
                             </label>
@@ -141,7 +142,7 @@ const Contact = ({ testFunc }) => {
                     <a href='https://www.linkedin.com/in/mark-medhurst-87a281a1/'>
                         <BsLinkedin className='mr-2 hover:cursor-pointer'/> 
                     </a>
-                    <a>
+                    <a href='https://www.facebook.com/mark.medhurst.144'>
                         <BsFacebook className='mr-2 hover:cursor-pointer'/>
                     </a>
                     <a href='https://www.instagram.com/thegr8nessproject/'>

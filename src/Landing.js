@@ -4,8 +4,8 @@ import { Popover, Transition } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import logo from './logo.svg';
 import collage from './assets/collage.jpg';
-import collage1 from './assets/collage1.jpg';
-import collage2 from './assets/collage2.jpg';
+// import collage1 from './assets/collage1.jpg';
+// import collage2 from './assets/collage2.jpg';
 
 
 const navigation = [
