@@ -9,7 +9,12 @@ import Reaptcha from 'reaptcha';
 const Contact = ({ testFunc }) => {
     const [markOpen, setMarkOpen] = useState(false);
     const [submitOpen, setSubmitOpen] = useState(false);
+    const [verified, setVerified] = useState(false)
     const form = useRef();
+
+    const verify = () => {
+        setVerified(true);
+    }
 
     const sendEmail = e => {
         e.preventDefault();
@@ -22,6 +27,7 @@ const Contact = ({ testFunc }) => {
         .then((result) => {
             console.log(result.text);
             setSubmitOpen(true);
+            setVerified(false);
             e.target.reset();
         }, (error) => {
             console.log(error.text);
@@ -70,7 +76,7 @@ const Contact = ({ testFunc }) => {
                             Reach out and we can set up a time to talk about how I can best partner with you and your aspiring althete!
                         </p>
                         <hr className='my-1'/>
-                        <form ref={form} onSubmit={sendEmail}>
+                        <form ref={form} onSubmit={sendEmail} name='contact'>
                             <label for='name' className="block text-sm font-medium text-gray-700">
                             Name
                             </label>
@@ -121,11 +127,12 @@ const Contact = ({ testFunc }) => {
                                     placeholder="Leave me a note!">
                                 </textarea>
                             </div>
-                            <Reaptcha sitekey="6Lc9q7sgAAAAAPke58fdNN4BpYPIlAVNBb1TvUOX"  className='my-2'/>
+                            <Reaptcha sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"  onVerify={verify} className='my-2'/>
                             <input 
                             type="submit"
                             value="Send"
-                            className="group mb-2 relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 hover:cursor-pointer"
+                            disabled={!verified && !(document.forms['contact'] ? document.forms['contact']['name'].value : false) && !(document.forms['contact'] ? document.forms['contact']['email'].value : false)}
+                            className="group mb-2 relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 hover:cursor-pointer disabled:bg-gray-300 disabled:cursor-auto"
                             />
                         </form>
                     </div>

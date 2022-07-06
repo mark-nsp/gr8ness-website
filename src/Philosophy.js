@@ -24,9 +24,9 @@ const features = [
   },
 ]
 
-export default function AboutMe() {
+export default function Philosophy() {
   return (
-    <div id='about-me' className="py-12 bg-white">
+    <div id='philosophy' className="py-12 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="lg:text-center">
           <h2 data-testid='mark' className="text-base text-blue-600 font-semibold tracking-wide uppercase">
