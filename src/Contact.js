@@ -127,11 +127,11 @@ const Contact = ({ testFunc }) => {
                                     placeholder="Leave me a note!">
                                 </textarea>
                             </div>
-                            <Reaptcha sitekey="6Lc9q7sgAAAAAPke58fdNN4BpYPIlAVNBb1TvUOX"  onVerify={verify} className='my-2'/>
+                            <Reaptcha sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"  onVerify={verify} className='my-2'/>
                             <input 
                             type="submit"
                             value="Send"
-                            disabled={!verified || !(document.forms['contact'] ? document.forms['contact']['name'].value : false) || !(document.forms['contact'] ? document.forms['contact']['email'].value : false)}
+                            disabled={!verified }
                             className="group mb-2 relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 hover:cursor-pointer disabled:bg-gray-300 disabled:cursor-auto"
                             />
                         </form>
