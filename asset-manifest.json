@@ -1,30 +1,25 @@
 {
   "files": {
-    "main.css": "/gr8ness-website/static/css/main.9d55dc9e.css",
-    "main.js": "/gr8ness-website/static/js/main.e0430ff1.js",
-    "static/js/787.f47c9f47.chunk.js": "/gr8ness-website/static/js/787.f47c9f47.chunk.js",
-    "static/media/collage1.jpg": "/gr8ness-website/static/media/collage1.ebe9f46fa43334454234.jpg",
-    "static/media/cam.JPG": "/gr8ness-website/static/media/cam.8ecf6a2c9f7a9aabd5bc.JPG",
-    "static/media/collage.jpg": "/gr8ness-website/static/media/collage.8441edeeab8d9a4b2ca9.jpg",
-    "static/media/collage2.jpg": "/gr8ness-website/static/media/collage2.0e9aa67577d16b78765d.jpg",
-    "static/media/jess.jpeg": "/gr8ness-website/static/media/jess.f6518d6578e876912e9f.jpeg",
-    "static/media/morrette.jpeg": "/gr8ness-website/static/media/morrette.30e674e549822c0596e3.jpeg",
-    "static/media/mark.JPG": "/gr8ness-website/static/media/mark.de1a851c8d9010f15361.JPG",
-    "static/media/tanner.jpg": "/gr8ness-website/static/media/tanner.39b662e17684bc9373f4.jpg",
-    "static/media/jake.JPG": "/gr8ness-website/static/media/jake.645d73df89a692c0fb59.JPG",
-    "static/media/basse.jpg": "/gr8ness-website/static/media/basse.55634c24ee4be35b1d74.jpg",
-    "static/media/ben.jpeg": "/gr8ness-website/static/media/ben.80ee80dc0689e4a0835b.jpeg",
-    "static/media/john.jpg": "/gr8ness-website/static/media/john.fdfd227bb3074215e31a.jpg",
-    "static/media/bernie.jpg": "/gr8ness-website/static/media/bernie.63cd6ae93f20b381ffe0.jpg",
-    "static/media/nick.JPG": "/gr8ness-website/static/media/nick.d21a973d5d74be1a3275.JPG",
-    "static/media/logo.svg": "/gr8ness-website/static/media/logo.b009c37246a2fbb765f6bdafc90a8b67.svg",
-    "index.html": "/gr8ness-website/index.html",
-    "main.9d55dc9e.css.map": "/gr8ness-website/static/css/main.9d55dc9e.css.map",
-    "main.e0430ff1.js.map": "/gr8ness-website/static/js/main.e0430ff1.js.map",
-    "787.f47c9f47.chunk.js.map": "/gr8ness-website/static/js/787.f47c9f47.chunk.js.map"
+    "main.css": "/static/css/main.9d55dc9e.css",
+    "main.js": "/static/js/main.cb84ebf9.js",
+    "static/js/787.f47c9f47.chunk.js": "/static/js/787.f47c9f47.chunk.js",
+    "static/media/cam.JPG": "/static/media/cam.8ecf6a2c9f7a9aabd5bc.JPG",
+    "static/media/collage.jpg": "/static/media/collage.8441edeeab8d9a4b2ca9.jpg",
+    "static/media/jess.jpeg": "/static/media/jess.f6518d6578e876912e9f.jpeg",
+    "static/media/morrette.jpeg": "/static/media/morrette.30e674e549822c0596e3.jpeg",
+    "static/media/mark.JPG": "/static/media/mark.de1a851c8d9010f15361.JPG",
+    "static/media/tanner.JPG": "/static/media/tanner.39b662e17684bc9373f4.JPG",
+    "static/media/jake.JPG": "/static/media/jake.645d73df89a692c0fb59.JPG",
+    "static/media/ben.jpeg": "/static/media/ben.80ee80dc0689e4a0835b.jpeg",
+    "static/media/nick.jpg": "/static/media/nick.d21a973d5d74be1a3275.jpg",
+    "static/media/logo.svg": "/static/media/logo.b009c37246a2fbb765f6bdafc90a8b67.svg",
+    "index.html": "/index.html",
+    "main.9d55dc9e.css.map": "/static/css/main.9d55dc9e.css.map",
+    "main.cb84ebf9.js.map": "/static/js/main.cb84ebf9.js.map",
+    "787.f47c9f47.chunk.js.map": "/static/js/787.f47c9f47.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9d55dc9e.css",
-    "static/js/main.e0430ff1.js"
+    "static/js/main.cb84ebf9.js"
   ]
 }
