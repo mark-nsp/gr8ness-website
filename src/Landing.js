@@ -37,7 +37,7 @@ export default function Landing( {testFunc} ) {
                       <span className="sr-only">Workflow</span>
                       <img
                         alt="PGR8"
-                        className="h-14 w-auto sm:h-14"
+                        className="h-14 w-auto sm:h-14 pr-5"
                         src={logo}
                       />
                     </div>
@@ -59,7 +59,10 @@ export default function Landing( {testFunc} ) {
                       {item.name}
                     </div>
                   ))}
-                  <div data-testid='contact' href="contact" onClick={() => testFunc ? testFunc() : document.getElementById('contact').scrollIntoView({behavior: 'smooth'})} className="hidden md:contents font-medium text-blue-600 hover:text-yellow-500 hover:cursor-pointer">
+                  <div data-testid='contact' 
+                      href="contact" 
+                      onClick={() => testFunc ? testFunc() : document.getElementById('contact').scrollIntoView({behavior: 'smooth'})} 
+                      className="hidden md:contents font-medium text-blue-600 hover:text-yellow-500 hover:cursor-pointer">
                     Contact
                   </div>
               </div>
