@@ -34,7 +34,7 @@ export default function Philosophy() {
           </h2>
           <p aria-label='description' className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-blue-600 sm:text-4xl">
             {/* More than a personal trainer */}
-            Keys to limitless potential
+            Keys to Unlock Greatness
           </p>
           <p aria-label='content' className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
           {/* For over 20 years Mark has been coaching, training, and mentoring athletes from junior high through college and beyond */}
