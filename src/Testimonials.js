@@ -59,7 +59,7 @@ const testimonials = [
     },
     {
       id: 3,
-      name: 'Camille S',
+      name: 'Camille Scheyer',
       college: 'Yale',
       sport: 'Field Hockey',
       imageSrc: cam,
@@ -141,7 +141,7 @@ const testimonials = [
     {
       id: 7,
       name: 'Alex Freiburger',
-      college: 'Colby',
+      college: 'NSCD',
       sport: 'Basketball',
       imageSrc: frei,
       content: <p>I started working with Mark during the summer before my junior year of high school. 
